@@ -5,7 +5,7 @@
 // These data sources hold arrays of information on friend-data
 // ===============================================================================
 
-var palData = require("../data/friends");
+let palData = require("../data/friends");
 
 
 
@@ -29,10 +29,6 @@ app.get("/api/pals", function(req, res) {
 
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
-
-
-
-
   app.post("/api/pals", function(req, res) {
 
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.

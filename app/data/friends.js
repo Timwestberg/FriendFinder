@@ -8,20 +8,27 @@
 // ===============================================================================
 
 var palArray = [
-
-    {
-      coderName: "Johnny",
-
-      coderEmail: "JohnB@Good.com",
-
-      coderID: "JohnnybGood",
-
-      coderNumber: "000-000-0000",
-
-      coderPhoto:""
-    }
+{
+  name:"Tim Dodle",
+  photo:"#",
+  favLang:"",
+  github:"",
+  scores:[
+      5,
+      1,
+      4,
+      4,
+      5,
+      1,
+      2,
+      5,
+      4,
+      1
+    ]
+}
 
   ];
+
   
   // Note how we export the array. This makes it accessible to other files using require.
   module.exports = palArray;
