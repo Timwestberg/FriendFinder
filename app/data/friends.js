@@ -2,8 +2,6 @@
 // DATA
 // Below data will hold all of the reserved tables.
 
-// Initially we just set it equal to a "dummy" customer.
-
 // But you could have it be an empty array as well.
 // ===============================================================================
 
@@ -24,6 +22,24 @@ var palArray = [
       5,
       4,
       1
+    ]
+},
+{
+  name:"Dulce Dodle",
+  photo:"#",
+  favLang:"",
+  github:"",
+  scores:[
+      3,
+      5,
+      2,
+      2,
+      3,
+      1,
+      2,
+      3,
+      2,
+      4
     ]
 }
 
