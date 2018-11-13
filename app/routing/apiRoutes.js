@@ -1,170 +1,136 @@
-    // ===============================================================================
-   // LOAD DATA
-  // We are linking our routes to a series of "data" sources.
- // These data sources hold arrays of information on friend-data
-// ===============================================================================
+//     // ===============================================================================
+//    // LOAD DATA
+//   // We are linking our routes to a series of "data" sources.
+//  // These data sources hold arrays of information on friend-data
+// // ===============================================================================
 
 
+  function CodePal(name,photo,favLang,github,scores) {
 
-const palData = require("../data/friends");
+    this.name = name,
+    
+    this.photo = photo,
+
+    this.favLang = favLang,
+
+    this.github = github,
+
+    this.scores = scores
+
+
+  };
+
+
+let palData = require("../data/friends");
 
 
 
 
 module.exports = function(app) {
 
-app.get("/api/pals", function(req, res) {
+//         // API POST Requests
+//        // Below code handles when a user submits a form and thus submits data to the server.
+//       // In each of the below cases, when a user submits form data (a JSON object)
+//      // ...the JSON is pushed to the appropriate JavaScript array
+//    // Then the server saves the data to the tableData array)
+//   // ---------------------------------------------------------------------------
 
-    res.json(palData);
 
-  });
-
-
+//       //for loop to go through the list of the current array of pals
+//       let eachTotal=[];
 
 
-        // API POST Requests
-       // Below code handles when a user submits a form and thus submits data to the server.
-      // In each of the below cases, when a user submits form data (a JSON object)
-     // ...the JSON is pushed to the appropriate JavaScript array
-    // (ex. User fills out a reservation request... this data is then sent to the server...
-   // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
   app.post("/api/pals", function(req, res) {
 
- //API POST request for JSON information for friends.js
-//create logic to grab user's score to compare with friendsData
-      let unsortedMatch =[];
+    console.log("This is th post request taking in data")
 
-      //grab results from user's survery
-      let newPal = req.body;
+        //API POST request for JSON information for friends.js
+       //create logic to grab user's score to compare with palData
+      // Holds data for current user
+	  let current_user = req.body
+	  
+	  let newpal = new CodePal (current_user.name, current_user.photo, current_user.favLang, current_user.github, current_user.scores)
 
-      console.log(newPal);
+	  console.log(newpal);
+	  
+	  console.log(current_user)
+     
+      let compatiblePal;
 
-      //create object for best match
-      let codePal = {
+      compatiblePal = find_match(newpal);
 
-          name: "",
+      palData.push(current_user);
+  
+      res.send(compatiblePal);
 
-          photo: "",
+    });
 
-          favLang:"",
-
-          github:"",
-
-          friendDiff: 0
-      };
-
-      //for loop to go through the list of the current array of pals
-      for (let i = 0; i < palData.length; i++){
-
-
-          //loop through the scores of the current array of pals
-          for (let j = 0; j < palData[i].scores[j]; j++){
-
-              //calculate the difference between the scores and sum the numbers for total difference
-              let palScores = newPal.scores;
-
-              difference += Math.abs(parseInt(palScores[j])-parseInt(palData[i].scores[j]));
-
-              if(difference <= codePal.friendDiff){
-
-                  //set the best friend finder to the for looped friendData
-                  codePal.name = friendsData[i].name;
-
-                  codePal.photo = friendsData[i].photo;
-
-                  codePal.favLang = friendsData[i].favLang;
-
-                  codePal.github = friendsData[i],github;
-
-                  codePal.friendDiff = difference;
-              }
-          }
-      };
-
-
-              //pushes new submission to array
-              palData.push(newFriend);
-
-
-
-      //pushes new submission to array
-      unsortedMatch.push(codePal);
-
-
-    let sortMatches = unsortedMatch.sort(function(a, b){return a.friendDiff - b.friendDiff});
-
-    let compartativeDiff = sortMatches[0].difference;
-
-    let closestMatch = [];
-
-    for (i=0; i < sortMatches.length; i++)   {
-
-        if (sortMatches[i].difference > compartativeDiff) 
-        
-        return closestMatch;
-
-        else {
-
-            closestMatch.push(sortMatches[i]);    
-
-    }};
-
-        //returns json with code Pal match
-        res.json(closestMatch);
-
+    	/**
+	 * Get handler for '/api/friends'
+	 * Returns the current list of users.
+	 */
+    app.get("/api/pals", function(req, res) {
     
-  })
+        res.json(palData);
+    
+	  });
+	  
+/**
+	*Function that calculates the difference between the current user's score and the palData scores
+*/
+function calculate(scores1, scores2){
+	let diff = 0;
+
+	for(let i = 0; i < scores1.length; i++){
 
 
+		diff += Math.abs( scores1[i] - scores2[i]);
 
+	}
+	console.log("returning a difference of " + diff);
+	return diff;
+}
 
+/**
+ *  Function to find the best coding pal for the current user
+ *  || Takes in the data from the survey html
+ */
+function find_match(newUser){
 
-app.post("/api/clear", function (req, res) {
-  // Empty out the arrays of data
-  palData.length = [];
-  res.json({ ok: true });
-});
+	//  Variable for setting  the max difference a user can have is fifty for it to be considered
+  let minDifference = 50;
+  
+	// Variable for storing the index the identifies the best matching pal in the palData array 
+  let matchIndex = -1; // This is made negative one for error handling down near the bottom 
 
+	// Iterate through list of users to find the most compatible match 
+	for(let i = 0; i < palData.length; i++){
 
+	// Variable for storing the current difference between the current user's Data and all the pals in palData
+    currentDifference = calculate(newUser.scores, palData[i].scores);
+	
+		//  If the current difference has a difference lower than the 50...
+		if(currentDifference < minDifference){
+
+		//  than make the current difference the new minmimum difference
+      minDifference = currentDifference;
+	  
+			// Variable updating the match index to the new lowest match
+			matchIndex = i;
+		}
+
+	}
+
+	//  if no match is found than let the userknow search has be undefined
+	if(matchIndex < 0){
+
+		return undefined;
+
+	}
+
+	//  Return the pal data with current user's best found match
+	return(palData[matchIndex])
 };
 
-// addScores();
-// // Function for adding the scores in an array
-
-// function addScores(){
-
-//   // the scores totaled in an array
-//   let eachTotal=[];
-
+};
   
-//  let userScore = req.body
-
-//  console.log(userScore.scores)
-
-//   // Function for adding the scores in an array
-//   for(let i = 0;i < palData.length; i++) {
-
-//     // letiable that stores all the score arrays for each pal
-//     let allDataScores = palData[i].scores;
-
-//     console.log(allDataScores)
-
-//     // letiable that stores the sum of the pals score from the survey
-//     // Found the below way of adding in from the below
-//     // https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
-//     let finalScore = allDataScores.reduce((a, b) => a + b, 0);
-
-//     console.log(finalScore)
-
-//     // Push each total for the users to a seperate array to be compared against
-//     eachTotal.push(finalScore)
-
-//     // console.log(eachTotal);
-
-//   }
-
-//   // Display the scores totaled in an array
-//   console.log(eachTotal);
-
-// };

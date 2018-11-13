@@ -16,7 +16,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <!-- Font Awesome icons -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
@@ -28,37 +28,39 @@
 
 <body>
 
+
+
   <div class="container">
 
-    <h2>Survey Questions</h2>
+    <h2 class="title">Survey Questions</h2>
     <hr>
 
-    <h3><strong>About You</strong></h3>
-    <h4>Name (Required)</h4>
-    <input type="text" id="name" class="form-control" required>
+    <h3 class="title"><strong>About You</strong></h3>
+    <h4 class="Qs">Name <strong>(Required)</strong></h4>
+    <input type="text" id="name" class="form-control" placeholder="Name" required>
 
-    <h4>Link to Photo Image (Required)</h4>
-    <input type="text" id="photo" class="form-control" required>
+    <h4 class="Qs">Photo Link <strong>(Required)</strong></h4>
+    <input type="text" id="photo" class="form-control" placeholder="Submit photo link" required>
 
-    <h4>What is your favorite programing language?(Required)</h4>
-    <input type="text" id="favLang" class="form-control" required>
+    <h4 class="Qs">What is your favorite programming language?<strong>(Required)</strong></h4>
+    <input type="text" id="favLang" class="form-control" placeholder="Favorite coding language" required>
 
-    <h4>Link to your GitHub or portfolio(Optional)</h4>
-    <input type="text" id="gitLink" class="form-control">
+    <h4 class="Qs">Link to your GitHub or portfolio<strong>(Optional)</strong></h4>
+    <input type="text" id="gitLink" class="form-control" placeholder="Github or portfolio link">
 
     <hr>
 
-          <!-- First Question -->
+    <!-- First Question -->
 
-    <h2><strong>Question 1</strong></h2>
+    <h2 class="title"><strong>Question 1</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
+    <h3 class="Qs">Your mind is always buzzing with unexplored ideas and plans.</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q1">
 
-        
+
       <option value=""></option>
 
       <option value="1">1 (Strongly Disagree)</option>
@@ -75,10 +77,10 @@
 
     <!-- Second Question -->
 
-    <h2><strong>Question 2</strong></h2>
+    <h2 class="title"><strong>Question 2</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>Generally speaking, you rely more on your experience than your imagination.</h3>
+    <h3 class="Qs">Generally speaking, you rely more on your experience than your imagination.</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q2">
@@ -98,12 +100,12 @@
     </select>
 
 
-        <!-- Third Question -->
+    <!-- Third Question -->
 
-    <h2><strong>Question 3</strong></h2>
+    <h2 class="title"><strong>Question 3</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>You find it easy to stay relaxed and focused even when there is some pressure.</h3>
+    <h3 class="Qs">You find it easy to stay relaxed and focused even when there is some pressure.</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q3">
@@ -122,12 +124,12 @@
 
     </select>
 
-      <!-- Fourth Question -->
+    <!-- Fourth Question -->
 
-    <h2><strong>Question 4</strong></h2>
+    <h2 class="title"><strong>Question 4</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>You rarely do something just out of sheer curiosity.</h3>
+    <h3 class="Qs">You rarely do something just out of sheer curiosity.</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q4">
@@ -147,12 +149,12 @@
     </select>
 
 
-       <!-- Fifth Question -->
+    <!-- Fifth Question -->
 
-    <h2><strong>Question 5</strong></h2>
+    <h2 class="title"><strong>Question 5</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>You are well experienced with version control programs such as Github</h3>
+    <h3 class="Qs">You are well experienced with version control programs such as Github</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q5">
@@ -172,12 +174,12 @@
     </select>
 
 
-       <!-- Sixth Question -->
+    <!-- Sixth Question -->
 
-    <h2><strong>Question 6</strong></h2>
+    <h2 class="title"><strong>Question 6</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>You beleive pseudo coding is important in all code</h3>
+    <h3 class="Qs">You believe pseudo coding is important in all code</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q6">
@@ -196,13 +198,13 @@
 
     </select>
 
-       <!-- Seventh Question -->
+    <!-- Seventh Question -->
 
 
-    <h2><strong>Question 7</strong></h2>
+    <h2 class="title"><strong>Question 7</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>In a discussion, truth should be more important than people’s sensitivities.</h3>
+    <h3 class="Qs">In a discussion, truth should be more important than people’s sensitivities.</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q7">
@@ -221,12 +223,12 @@
 
     </select>
 
-        <!-- Eighth Question -->
+    <!-- Eighth Question -->
 
-    <h2><strong>Question 8</strong></h2>
+    <h2 class="title"><strong>Question 8</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>You prefer to work on the backend programming the night away</h3>
+    <h3 class="Qs">You prefer to work on the backend programming the night away</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q8">
@@ -245,12 +247,13 @@
 
     </select>
 
-        <!-- Ninth Question -->
+    <!-- Ninth Question -->
 
-    <h2><strong>Question 9</strong></h2>
+    <h2 class="title"><strong>Question 9</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h3>
+    <h3 class="Qs">You think that everyone’s views should be respected regardless of whether they are supported by
+      facts or not.</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q9">
@@ -269,12 +272,12 @@
 
     </select>
 
-        <!-- Tenth Question -->
+    <!-- Tenth Question -->
 
-    <h2><strong>Question 10</strong></h2>
+    <h2 class="title"><strong>Question 10</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3>Prefer frontend programing and languages</h3>
+    <h3 class="Qs">Prefer frontend programing and languages</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q10">
@@ -297,8 +300,8 @@
     <br>
 
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-     Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fas fa-clipboard-check"></i>
+      Submit</button>
 
     <hr>
     <footer class="footer">
@@ -306,9 +309,9 @@
       <div class="container">
 
         <p>
-            <!-- Referencing the APIs made in the api routes js file -->
-            <a href="/api/pals">API Friends List</a> | <a href="https://github.com/Timwestberg/FriendFinder">GitHub Repo</a>
-        
+          <!-- Referencing the APIs made in the api routes js file -->
+          <a href="/api/pals">API Friends List</a> | <a href="https://github.com/Timwestberg/FriendFinder">GitHub Repo</a>
+
         </p>
 
       </div>
@@ -331,9 +334,9 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
           <h2 class="modal-title">
-            
+
             <strong>Best Match</strong>
-          
+
           </h2>
 
         </div>
@@ -343,11 +346,11 @@
 
           <h2 id="match-name"></h2>
 
-          <img id="match-img" src="" alt="Coder's Image">
+          <h3 id="match-github"></h3>
+
+          <img id="match-img" class="img-fluid" src="" alt="Coder's Image">
 
           <h3 id="match-lang"></h3>
-          
-          <h3 id="match-github"></h3>
 
         </div>
 
@@ -364,12 +367,125 @@
 
   </div>
 
+  <!-- =================================Styling ===================================================== -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Economica|Playfair+Display+SC|Source+Code+Pro');
+
+*
+{
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.65);
+  background-color: #b6c19e;
+}
 
 
+    .chosen-select {
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      -webkit-box-shadow: 0px 4px 31px -5px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 4px 31px -5px rgba(0,0,0,0.75);
+      box-shadow: 0px 4px 31px -5px rgba(0,0,0,0.75);
+      background-color: white;
+      text-shadow: none;
+      text-align:center;
+      font-family: 'Economica', sans-serif;
+      font-size: 28px;
+    }
+
+    .chosen-select:hover {
+      cursor:-webkit-grab;
+      background-color: rgb(252, 255, 96);
+    }
+
+        .Qs {
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    .title {
+      font-family: 'Playfair Display SC', serif;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.84);
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke-color: #0aad77;
+      -webkit-text-stroke-width: 2.00px; 
+	    font-size: 39px;
+    }
+
+
+    #name {
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+
+    }
+
+    #photo {
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+
+    }
+
+    #favLang{
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+
+    }
+
+    #gitlink {
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
+
+    }
+
+    #submit {
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      font-family: 'Playfair Display SC', serif;
+      font-size: 28px;
+      background-color: #218ba5;
+      
+    }
+
+    #submit:hover {
+      -webkit-box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
+      -moz-box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
+      box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
+    }
+
+
+      </style>
+
+
+
+
+
+
+  <!-- ===============================Begining of javascript========================================== -->
   <script type="text/javascript">
-
     // Capture the form inputs
-    $("#submit").on("click", function(event) {
+    $("#submit").on("click", function (event) {
 
       event.preventDefault();
 
@@ -377,9 +493,9 @@
       function validateForm() {
 
         let isValid = true;
-        
+
         // Create a for loop for all class with form-conrol to make sure there was a suiteable answer inputed by user || Bootstrap
-        $(".form-control").each(function() {
+        $(".form-control").each(function () {
 
           if ($(this).val() === "") {
 
@@ -390,7 +506,7 @@
         });
 
         // Create a for loop for all class with chosen-select to make sure there was a suiteable answer inputed by user || Non Bootstrap
-        $(".chosen-select").each(function() {
+        $(".chosen-select").each(function () {
 
           if ($(this).val() === "") {
 
@@ -407,21 +523,21 @@
       if (validateForm()) {
 
         // Create an object for the user's score || This placing the pal's data from the form and plugs it into an identical structure as set in html routes js file
-        let palData = {
+        let newData = {
 
-        // Variable storing the name of the user
-          name: $("#name").val(), 
-          
-        // Variable storing the photo from the user
+          // Variable storing the name of the user
+          name: $("#name").val(),
+
+          // Variable storing the photo from the user
           photo: $("#photo").val(),
 
-        // Variable for storing the user's favorite coding language
+          // Variable for storing the user's favorite coding language
           favLang: $("#favLang").val(),
 
-        // Variable for storing the github link if the User decides to include it
+          // Variable for storing the github link if the User decides to include it
           github: $("#gitLink").val(),
-        
-        // Variable for storing the user's answer to the questions in the survey-form
+
+          // Variable for storing the user's answer to the questions in the survey-form
           scores: [
 
             $("#Q1").val(),
@@ -448,10 +564,10 @@
 
         };
 
-        console.log(palData)
+        console.log("This is dipslaying from survey: " + newData)
 
         // AJAX post the data to the pals API.
-        $.post("/api/friends", palData, function(data) {
+        $.post("/api/pals", newData, function (data) {
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);
@@ -460,7 +576,7 @@
 
           $("#match-lang").text(data.favLang);
 
-          $("match-github").text(data.github);
+          $("#match-github").text(data.github);
 
 
 
@@ -477,7 +593,6 @@
       }
 
     });
-
   </script>
 
 </body>

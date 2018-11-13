@@ -1,6 +1,4 @@
 // ===============================================================================
-// DATA
-// Below data will hold all of the reserved tables.
 
 // But you could have it be an empty array as well.
 // ===============================================================================
@@ -9,8 +7,8 @@ var palArray = [
 {
   name:"Tim Dodle",
   photo:"#",
-  favLang:"",
-  github:"",
+  favLang:"Java",
+  github:"www.github.com.timdoodle",
   scores:[
       5,
       1,
@@ -27,8 +25,8 @@ var palArray = [
 {
   name:"Dulce Dodle",
   photo:"#",
-  favLang:"",
-  github:"",
+  favLang:"Python",
+  github:"www.github.com/dulcedoodle",
   scores:[
       3,
       5,
@@ -42,7 +40,6 @@ var palArray = [
       4
     ]
 }
-
   ];
 
   
