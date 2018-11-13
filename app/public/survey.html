@@ -277,7 +277,7 @@
     <h2 class="title"><strong>Question 10</strong></h2>
 
     <!-- Display the question to the user -->
-    <h3 class="Qs">Prefer frontend programing and languages</h3>
+    <h3 class="Qs">Prefer frontend programming and languages</h3>
 
     <!-- Drop down list of options for the user to choosen from (1 thru 5*)-->
     <select class="chosen-select" id="Q10">
@@ -346,7 +346,13 @@
 
           <h2 id="match-name"></h2>
 
-          <h3 id="match-github"></h3>
+          <a id="match-github" href=""><button type="button"class="btn btn-primary btn-lg btn-block" id="github-button">
+
+            <i class="fab fa-github"></i>
+
+            Github</button>
+          
+          </a>
 
           <img id="match-img" class="img-fluid" src="" alt="Coder's Image">
 
@@ -372,12 +378,59 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Economica|Playfair+Display+SC|Source+Code+Pro');
 
-*
+body
 {
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.65);
   background-color: #b6c19e;
 }
 
+
+  /* This is where the styling for modal begins */
+
+  .modal-body {
+    font-family: 'Source Code Pro', monospace;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.65);
+    background-color: #54d7f7
+  }
+
+    #github-button {
+      border-radius: 59px 59px 59px 59px;
+      -moz-border-radius: 59px 59px 59px 59px;
+      -webkit-border-radius: 59px 59px 59px 59px;
+      border: 0px solid #000000;
+      font-family: 'Playfair Display SC', serif;
+      font-size: 28px;
+      background-color: #b6c19e;
+      
+    }
+
+    #github-button:hover {
+      -webkit-box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
+      -moz-box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
+      box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
+    }
+
+
+#match-name {
+  font-family: 'Economica', sans-serif;
+
+}
+
+#match-img {
+  height: 200px;
+  width:200px;
+  border-radius: 57px 57px 57px 57px;
+-moz-border-radius: 57px 57px 57px 57px;
+-webkit-border-radius: 57px 57px 57px 57px;
+border: 0px solid #000000;
+
+}
+
+#match-lang {
+  font-family: 'Economica', sans-serif;
+}
+
+  /* This is where the styling for modal ends */
 
     .chosen-select {
       border-radius: 59px 59px 59px 59px;
@@ -405,9 +458,9 @@
 
     .title {
       font-family: 'Playfair Display SC', serif;
-      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.84);
-      -webkit-text-fill-color: black;
-      -webkit-text-stroke-color: #0aad77;
+      text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.65);
+      -webkit-text-fill-color: red;
+      -webkit-text-stroke-color: #218ba5;
       -webkit-text-stroke-width: 2.00px; 
 	    font-size: 39px;
     }
@@ -415,52 +468,34 @@
 
     #name {
       border-radius: 59px 59px 59px 59px;
-      -moz-border-radius: 59px 59px 59px 59px;
-      -webkit-border-radius: 59px 59px 59px 59px;
       border: 0px solid #000000;
-      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
       box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
 
     }
 
     #photo {
       border-radius: 59px 59px 59px 59px;
-      -moz-border-radius: 59px 59px 59px 59px;
-      -webkit-border-radius: 59px 59px 59px 59px;
       border: 0px solid #000000;
-      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
       box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
 
     }
 
     #favLang{
       border-radius: 59px 59px 59px 59px;
-      -moz-border-radius: 59px 59px 59px 59px;
-      -webkit-border-radius: 59px 59px 59px 59px;
       border: 0px solid #000000;
-      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
       box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
 
     }
 
     #gitlink {
       border-radius: 59px 59px 59px 59px;
-      -moz-border-radius: 59px 59px 59px 59px;
-      -webkit-border-radius: 59px 59px 59px 59px;
       border: 0px solid #000000;
-      -webkit-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
       box-shadow: 10px 10px 44px -12px rgba(0,0,0,0.75);
 
     }
 
     #submit {
       border-radius: 59px 59px 59px 59px;
-      -moz-border-radius: 59px 59px 59px 59px;
-      -webkit-border-radius: 59px 59px 59px 59px;
       border: 0px solid #000000;
       font-family: 'Playfair Display SC', serif;
       font-size: 28px;
@@ -469,8 +504,6 @@
     }
 
     #submit:hover {
-      -webkit-box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
-      -moz-box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
       box-shadow: inset 10px 10px 42px -18px rgba(0,0,0,0.77);
     }
 
@@ -576,7 +609,7 @@
 
           $("#match-lang").text(data.favLang);
 
-          $("#match-github").text(data.github);
+          $("#match-github").attr("href",data.github);
 
 
 
